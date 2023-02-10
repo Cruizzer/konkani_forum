@@ -24,10 +24,10 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
 // With multer (in future).
-app.use("/assets", express.static(path.join(__dirname, "public/assets")));
+// app.use("/assets", express.static(path.join(__dirname, "public/assets")));
 
 /* App routes */
-app.post("auth/register", register);
+app.post("/auth/register", register);
 
 /* Mongoose Setup */
 const PORT = process.env.PORT || 6001;
