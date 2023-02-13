@@ -8,6 +8,7 @@ import helmet from "helmet";
 import morgan from "morgan";
 import path from "path";
 import { fileURLToPath } from "url";
+import authRoutes from "./routes/auth.js"
 import { register } from "./controllers/auth.js"
 
 /* CONFIGURATIONS */
@@ -26,8 +27,12 @@ app.use(cors());
 // With multer (in future).
 // app.use("/assets", express.static(path.join(__dirname, "public/assets")));
 
-/* App routes */
+/* App Routes with Files */
 app.post("/auth/register", register);
+
+/* All App Routes */
+app.use("/auth", authRoutes);
+
 
 /* Mongoose Setup */
 const PORT = process.env.PORT || 6001;

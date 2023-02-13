@@ -25,8 +25,14 @@ const UserSchema = new mongoose.Schema({
         min: 2,
         max: 50,
     },
-    location: String,
-    contributions: Number,
+    location: {
+        type: String,
+        default: "Unknown"
+    },
+    contributions: {
+        type: Number,
+        default: 0
+    },
     activeThreads: {
         type: Array,
         default: []
