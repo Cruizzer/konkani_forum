@@ -9,6 +9,7 @@ import morgan from "morgan";
 import path from "path";
 import { fileURLToPath } from "url";
 import authRoutes from "./routes/auth.js"
+import userRoutes from "./route/users.js"
 import { register } from "./controllers/auth.js"
 
 /* CONFIGURATIONS */
@@ -32,6 +33,7 @@ app.post("/auth/register", register);
 
 /* All App Routes */
 app.use("/auth", authRoutes);
+app.use("/users", userRoutes);
 
 
 /* Mongoose Setup */
